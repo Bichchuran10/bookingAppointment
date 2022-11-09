@@ -10,15 +10,33 @@ function onSubmit(e)
 {
     e.preventDefault()
    
-    localStorage.setItem('name',nameInput.value)
-    localStorage.setItem('email',email.value)
-    localStorage.setItem('phone',phone.value)
-    localStorage.setItem('appointment',appointment.value)
+    //localStorage.setItem('name',nameInput.value)
+    //localStorage.setItem('email',email.value)
+    //localStorage.setItem('phone',phone.value)
+    //localStorage.setItem('appointment',appointment.value)
 
-    nameInput.value=""
-    email.value=""
-    phone.value=""
-    appointment.value=""
+    let userDetails={
+         name: nameInput.value,
+         email: email.value,
+         phone: phone.value,
+         appointment: appointment.value
+
+    };
+
+    let userDetails_str=JSON.stringify(userDetails)
+
+    localStorage.setItem('user',userDetails_str)
+
+
+    
+
+  //reset the form
+  document.querySelector('form').reset()
+
+    //nameInput.value=""
+    //email.value=""
+   // phone.value=""
+   // appointment.value=""
 
 
 }
