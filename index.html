@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Document</title>
+
+    <style>
+
+        div
+
+        {
+
+            border: 2px solid orange;
+
+            border-radius: 10px;
+
+            width:694px;
+
+            height:470px;
+
+            margin: auto;
+
+            padding: 5px;
+
+            color: rgb(40, 5, 5);
+
+        }
+
+        input
+
+        {
+
+            width:650px;
+
+            padding: 18px;
+
+            margin-top: 5px;
+
+            height: 5px;
+
+           
+
+        }
+
+        h1
+
+        {
+
+            color:rgb(199, 150, 45);
+
+            text-align: center;
+
+        }
+
+        h4
+
+        {
+
+            text-align: center;
+
+            color:rgb(137, 14, 14);
+
+        }
+
+        button
+
+        {
+
+            width:692px;
+
+            background-color: orange;
+
+            height:40px;
+
+            border-radius: 5px;
+
+            border:none;
+
+        }
+
+        body
+
+        {
+
+            background-image: url("https://images.unsplash.com/photo-1667481020991-31186b791c13?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80");
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    
+
+    <div class="container">
+
+        <h1> Book a call</h1>
+
+        <h4> Book a call slot and our represententative will contact you within 1hr</h4>
+
+        <hr>
+
+    <form id="my-form"> <!--action="#"-->
+
+        <label>Name</label> <br>
+
+        <input type="text" id="name" name="name" required> <br>
+
+
+
+        <label>Email</label><br>
+
+        <input type="email" id="mail" name="email" required> <br>
+
+        <label>Phone</label><br>
+
+
+
+        <input type="number" id="phone" name="phone" required> <br>
+
+        <label>Time for a call</label><br>
+
+        <input type="datetime-local" name="dateandtime" id=appointment required>
+
+
+
+        <br>
+
+        <br>
+        <button class="button" id="btn" type="submit">GET A CALL</button>
+
+    </form>
+
+</div>
+<script src="index.js"> </script>
+
+</body>
+
+</html>
