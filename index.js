@@ -15,6 +15,8 @@ function onSubmit(e)
     let email=document.getElementById('mail').value
     let phone=document.getElementById('phone').value
     let appointment=document.getElementById('appointment').value
+
+    let ul=document.getElementById('listofpeople')
    
 
     let users={
@@ -37,21 +39,55 @@ function onSubmit(e)
    //initializing the inner content of li
    li.innerHTML= (`${reconverted.Name} ,${reconverted.Email},${reconverted.Phone}, ${reconverted.Appointment}`);
    li.style.color="black"
-   
 
-   let ul=document.getElementById('listofpeople')
-   //storing li in the ul parent class
-   ul.appendChild(li)
+      //For Editing User
+      let editBtn = document.createElement('button');
+      editBtn.type = 'button';
+      editBtn.innerHTML = 'EDIT';
+      editBtn.style.color="#f4f4f4"
+      editBtn.style.backgroundColor="grey"
+      editBtn.addEventListener("click" , editThisKey);
 
+       //For Deleting User
+       let deleteBtn = document.createElement('button');
+       deleteBtn.type = 'button' ;
+       deleteBtn.innerHTML = 'DELETE' ; 
+       deleteBtn.style.color="#f4f4f4"
+       deleteBtn.style.backgroundColor="red"
+       deleteBtn.addEventListener("click", deleteThisKey);
 
-  //reset the form
-  document.querySelector('form').reset()
+       
 
-   
+        //Now Appending Everyting at their repective place
+        ul.appendChild(li);
+        li.appendChild(editBtn);
+        li.appendChild(deleteBtn);
 
-   
+        function editThisKey() {
+            //Showing User Details on respective input field so that user can directly edit there. 
+            document.getElementById('name').value=nameInput
+            document.getElementById('mail').value=email
+            document.getElementById('phone').value=phone
+            document.getElementById('appointment').value=appointment
 
+        }
+        function deleteThisKey(email) {
+            localStorage.removeItem(email);
+            ul.removeChild(li);
+         }
+
+           //reset the form
+         document.querySelector('form').reset()
 
 }
+
+//Now Delete the user detail so that when he click on submit button a new details get stored
+ //deleteThisKey();
+
+
+
+
+
+
 
 
